@@ -360,6 +360,11 @@ p {
 
 .nav-cta {
   margin-left: var(--space-md);
+  color: #fff !important;
+}
+
+.nav-cta:hover {
+  color: #fff !important;
 }
 
 .nav-toggle {
