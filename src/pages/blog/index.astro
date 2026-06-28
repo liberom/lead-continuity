@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.pubDate <= new Date() : true;
+});
+
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Blog — Lead Continuity LLC"
+  description="Insights, strategies, and tips on digital marketing, lead management, automation, and growing your business pipeline."
+  path="/blog"
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h1>Blog</h1>
+        <p>Insights on digital marketing, lead management, automation, and growing your business pipeline.</p>
+      </div>
+
+      {posts.length === 0 ? (
+        <div class="section-header" style="padding: var(--space-3xl) 0;">
+          <p>No posts yet. Check back soon!</p>
+        </div>
+      ) : (
+        <div class="blog-list" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+          {posts.map((post) => (
+            <a href={`/blog/${post.id}`} class="blog-card">
+              <div class="blog-card-date">
+                {post.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

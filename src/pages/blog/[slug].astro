@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={`${post.data.title} — Lead Continuity LLC`}
+  description={post.data.description}
+  path={`/blog/${post.id}`}
+>
+  <article class="blog-post">
+    <div class="container-narrow">
+      <h1>{post.data.title}</h1>
+      <div class="blog-post-meta">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+        {post.data.updatedDate && (
+          <>
+            {' · '}
+            <span>
+              Updated: {post.data.updatedDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </span>
+          </>
+        )}
+      </div>
+
+      <div class="blog-post-content">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

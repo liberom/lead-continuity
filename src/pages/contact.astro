@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Us — Lead Continuity LLC"
+  description="Get in touch with Lead Continuity LLC for a free digital marketing consultation. Call +1 (307) 296-4737 or fill out our contact form."
+  path="/contact"
+>
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h1>Let's talk about your growth.</h1>
+        <p>Ready to stop losing leads? Fill out the form and we'll get back to you within one business day.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div>
+          <div class="contact-info-card">
+            <h3>Contact Information</h3>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📍</div>
+              <div>
+                <div class="contact-detail-label">Address</div>
+                <div class="contact-detail-value">30 N Gould St Ste N, Sheridan, WY 82801</div>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📞</div>
+              <div>
+                <div class="contact-detail-label">Phone</div>
+                <div class="contact-detail-value"><a href="tel:+13072964737">+1 (307) 296-4737</a></div>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">✉️</div>
+              <div>
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value"><a href="mailto:contact@lead-continuity.com">contact@lead-continuity.com</a></div>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">🕐</div>
+              <div>
+                <div class="contact-detail-label">Business Hours</div>
+                <div class="contact-detail-value">Monday – Friday, 9 AM – 6 PM MT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <form class="contact-form" action="https://formsubmit.co/contact@lead-continuity.com" method="POST">
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New Lead Continuity Contact Form Submission" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://lead-continuity.com/contact?sent=true" />
+
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <input class="form-input" type="text" id="name" name="name" required placeholder="John Smith" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input class="form-input" type="email" id="email" name="email" required placeholder="john@company.com" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Company Name</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="Your Company" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">Service of Interest</label>
+              <select class="form-select" id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="lead-reactivation">Automated Lead Reactivation</option>
+                <option value="reputation">Reputation & Review Automation</option>
+                <option value="nurturing">Intelligent Lead Nurturing</option>
+                <option value="call-handling">AI-Powered Call Handling</option>
+                <option value="advertising">Performance Advertising</option>
+                <option value="seo">Search Engine Optimization (SEO)</option>
+                <option value="ppc">Pay-Per-Click Advertising (PPC)</option>
+                <option value="content">Content Marketing</option>
+                <option value="social">Social Media Management</option>
+                <option value="website">Website Development</option>
+                <option value="lead-gen">Lead Generation</option>
+                <option value="multiple">Multiple Services</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea class="form-textarea" id="message" name="message" required placeholder="Tell us about your business and goals..."></textarea>
+            </div>
+
+            <!-- A2P Consent Checkbox 1: Marketing -->
+            <div class="consent-group">
+              <label class="consent-checkbox">
+                <input type="checkbox" name="marketing_consent" id="marketingConsent" value="yes" />
+                <span class="consent-text">
+                  I consent to receive recurring automated marketing text messages, including special offers, service updates, and promotional content, from Lead Continuity LLC at the phone number provided. Message frequency varies, up to 4 messages per month. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                </span>
+              </label>
+            </div>
+
+            <!-- A2P Consent Checkbox 2: Non-Marketing -->
+            <div class="consent-group">
+              <label class="consent-checkbox">
+                <input type="checkbox" name="non_marketing_consent" id="nonMarketingConsent" value="yes" />
+                <span class="consent-text">
+                  I consent to receive recurring automated non-marketing text messages from Lead Continuity LLC about campaign performance reports, service updates, and client communication. Message frequency varies, up to 4 messages per month. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // A2P validation: if phone is entered and neither consent is checked, alert
+    const form = document.querySelector('.contact-form');
+    form?.addEventListener('submit', function(e) {
+      const phone = document.getElementById('phone') as HTMLInputElement;
+      const marketingConsent = document.getElementById('marketingConsent') as HTMLInputElement;
+      const nonMarketingConsent = document.getElementById('nonMarketingConsent') as HTMLInputElement;
+
+      if (phone.value.trim() !== '' && !marketingConsent.checked && !nonMarketingConsent.checked) {
+        e.preventDefault();
+        alert('You have provided a phone number but have not consented to receive text messages. Please check one of the consent boxes below if you wish to receive SMS communications, or remove your phone number to continue without SMS.');
+        phone.focus();
+      }
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Our Services — Lead Continuity LLC"
+  description="Explore our 11 digital marketing services: automated lead reactivation, reputation management, lead nurturing, AI call handling, SEO, PPC, content marketing, social media, and more."
+  path="/services"
+>
+  <section class="hero" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="hero-badge">Our Services</div>
+      <h1>Full-funnel digital marketing.</h1>
+      <p class="hero-subtitle">From AI-powered automation to performance advertising, we offer everything your business needs to capture, nurture, and convert leads.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <!-- Agentic Services -->
+      <div style="margin-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <h2 style="color: var(--primary);">Core Automation & AI Services</h2>
+          <p>Our flagship agentic services run on autopilot to keep your pipeline flowing 24/7.</p>
+        </div>
+
+        <div class="services-grid" id="lead-reactivation">
+          <div class="service-card">
+            <div class="card-icon">LR</div>
+            <h3 class="card-title">Automated Lead Reactivation</h3>
+            <p class="card-text">Won back dormant contacts with intelligent, automated outreach that engages past leads and brings them back into your sales pipeline. Multi-channel sequences via SMS, email, and phone.</p>
+          </div>
+
+          <div class="service-card" id="reputation">
+            <div class="card-icon">RR</div>
+            <h3 class="card-title">Reputation & Review Automation</h3>
+            <p class="card-text">Build powerful social proof automatically. We manage review requests, monitor your online presence, and ensure your business shines everywhere customers look.</p>
+          </div>
+
+          <div class="card" id="nurturing">
+            <div class="card-icon">LN</div>
+            <h3 class="card-title">Intelligent Lead Nurturing</h3>
+            <p class="card-text">Keep your brand top-of-mind with smart, multi-channel nurture sequences. Our system adapts messaging based on lead behavior and engagement to maximize conversion rates.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">CH</div>
+            <h3 class="card-title">AI-Powered Call Handling</h3>
+            <p class="card-text">Never miss an opportunity. Our AI receptionist answers calls instantly, qualifies leads, books appointments, and routes complex inquiries to the right team member.</p>
+          </div>
+
+          <div class="card" id="advertising">
+            <div class="card-icon">PA</div>
+            <h3 class="card-title">Performance Advertising</h3>
+            <p class="card-text">Full-service paid advertising management across Google Ads, Meta, and programmatic platforms. Data-driven campaigns optimized for lead quality and cost efficiency.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Marketing Services -->
+      <div id="seo">
+        <div class="section-header">
+          <h2 style="color: var(--primary);">Digital Marketing Services</h2>
+          <p>Proven strategies to grow your online presence, attract high-intent prospects, and convert them into customers.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="card-icon">🔍</div>
+            <h3 class="card-title">Search Engine Optimization (SEO)</h3>
+            <p class="card-text">Dominate organic search results with our comprehensive SEO strategies. Technical optimization, content strategy, link building, and local SEO to drive sustainable traffic growth.</p>
+          </div>
+
+          <div class="service-card" id="ppc">
+            <div class="card-icon">💰</div>
+            <h3 class="card-title">Pay-Per-Click Advertising (PPC)</h3>
+            <p class="card-text">Immediate visibility with strategic PPC campaigns across Google, Bing, and social platforms. Managed for maximum ROI with continuous A/B testing and optimization.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon">✍️</div>
+            <h3 class="card-title">Content Marketing</h3>
+            <p class="card-text">Engage your audience with valuable content that builds trust and authority. Blog posts, case studies, whitepapers, video content, and strategic content distribution.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon">📱</div>
+            <h3 class="card-title">Social Media Management</h3>
+            <p class="card-text">Build and engage your community across all major platforms. Strategy, content creation, community management, and paid social campaigns that drive real business results.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon">🌐</div>
+            <h3 class="card-title">Website Development</h3>
+            <p class="card-text">High-converting websites built for performance, SEO, and user experience. Fast, mobile-responsive, and designed to turn visitors into leads and customers.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Lead Generation</h3>
+            <p class="card-text">Multi-channel lead generation strategies designed to fill your pipeline with qualified prospects. Landing pages, lead magnets, paid campaigns, and strategic partnerships.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Not sure which services you need?</h2>
+      <p>Let's talk about your business goals and build a custom strategy.</p>
+      <a href="/contact" class="btn btn-secondary btn-lg">Get a Free Strategy Session</a>
+    </div>
+  </section>
+</BaseLayout>
