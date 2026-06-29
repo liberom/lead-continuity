@@ -45,7 +45,7 @@ Blog posts are Markdown files in `src/content/blog/`. Astro automatically discov
 | Field         | Required | Description                                         |
 |:------------- |:-------- |:--------------------------------------------------- |
 | `title`       | Yes      | Post headline                                       |
-| `description` | Yes      | Short summary for SEO and the blog index            |
+| `description` | Yes      | Short summary for SEO and the blog index.            |
 | `pubDate`     | Yes      | Publication date (YYYY-MM-DD)                       |
 | `updatedDate` | No       | Last updated date (shown if different from pubDate) |
 | `heroImage`   | No       | URL to a hero image for the post                    |
